@@ -3,7 +3,7 @@ import {filepath} from '../config/config.js'
 import {getFileLines} from '../util/data.js'
 import {registerMatch, registerPlayer, registerKill} from './gameService.js'
 
-const parseFile = () => {
+function parseFile () {
     let games = {}, game_index = 0, pattern
     const lines = getFileLines(filepath)   
 
@@ -20,4 +20,4 @@ const parseFile = () => {
     return games
 }
 
-export default parseFile
+export default {parseFile}

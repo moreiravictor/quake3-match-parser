@@ -1,8 +1,3 @@
-import express, { json } from 'express';
-import routes from './adapter/http/config/routes.js';
-const app = express();
+import app from './app.js'
 
-app.use(json());
-app.use(routes);
-
-app.listen(4043);
+app.listen(4043)

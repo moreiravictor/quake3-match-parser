@@ -1,5 +1,5 @@
-import Game from '../../core/model/game.js'
-import parser from '../../core/service/parser.js'
+import Game from '../../../core/model/game.js'
+import parser from '../../../core/service/parser.js'
 
 export default {
     async getAll(req, res) {
@@ -10,6 +10,6 @@ export default {
         const {match_id} = req.params;
         const parsed_matches = parser.parseFile()
         const chosen_match = parsed_matches[Game.key(match_id)]
-        return res.json(chosen_match)
+        return (chosen_match) ? res.json(chosen_match) : res.status(404).send()
     }
 }

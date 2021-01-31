@@ -23,7 +23,6 @@ function registerPlayer(games, game_index, pattern) {
 
 function registerMatch(games, game_index) {
     games[Game.key(game_index)] = new Game()
-    games[Game.key(game_index)].total_kills = 0
 }
 
 export {

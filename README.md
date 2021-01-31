@@ -1,4 +1,4 @@
-# quake3-match-parser
+# :video_game: quake3-match-parser
 
 quake3-match-parser is a parser made for Quake3 log file in order to get games informations (kills, total kills and players).
 It is made based on REGEX and line by line reading.

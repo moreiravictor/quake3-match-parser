@@ -1,5 +1,5 @@
 import Game from '../../../core/model/game.js'
-import parser from '../../../core/service/parser.js'
+import parser from '../../../core/service/parserService.js'
 
 export default {
     async getAll(req, res) {

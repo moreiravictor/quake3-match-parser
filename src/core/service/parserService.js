@@ -1,10 +1,11 @@
-import {game_start, kill, new_player} from '../model/regex.js'
+import {game_start, kill, new_player} from '../util/regex.js'
 import {filepath} from '../config/config.js'
 import {getFileLines} from '../util/data.js'
 import {registerMatch, registerPlayer, registerKill} from './gameService.js'
+import GameList from '../model/gameList.js'
 
 function parseFile () {
-    let games = {}, game_index = 0, pattern
+    let games = new GameList(), game_index = 0, pattern
     const lines = getFileLines(filepath)   
 
     lines.forEach(line => {

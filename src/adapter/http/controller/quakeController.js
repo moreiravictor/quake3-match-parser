@@ -1,16 +1,26 @@
-import Game from '../../../core/model/game.js'
 import parser from '../../../core/service/parserService.js'
 import {filepath} from '../../../core/config/config.js'
+import { NotFound } from '../../../core/util/error.js'
 
 
 export default {
     async getAll(req, res) {
-        const parsed_matches = parser.parseFile(filepath)
-        return res.json(parsed_matches)
+        try {
+            const parsed_matches = parser.parseFile(filepath)
+            return res.json(parsed_matches)
+        } catch(err) {
+            next(err)
+        }
     },
-    async getById(req, res) {
-        const {match_id} = req.params
-        const chosen_match = parser.parsedMatch(filepath, match_id)
-        return (chosen_match) ? res.json(chosen_match) : res.status(404).send()
+    async getById(req, res, next) {
+        try {
+            const {match_id} = req.params
+            const chosen_match = parser.parsedMatch(filepath, match_id)
+            if (chosen_match)
+                return res.json(chosen_match)
+            throw new NotFound('match not found')
+        } catch(err) {
+            next(err)
+        }
     }
 }

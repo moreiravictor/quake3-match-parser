@@ -1,0 +1,19 @@
+import request from 'supertest'
+import app from '../../../../../src/app.js'
+
+describe('Controller which provides parsed informations of log archive', () => {
+    it('should parse the whole file', async () => {
+
+        const res = await request(app)
+            .get('/matches')
+
+        expect(res.status).toBe(200)
+    }),
+    it('should return a single parsed game', async () => {
+
+        const res = await request(app)
+            .get('/matches/1')
+            
+        expect(res.status).toBe(200)
+    })
+})

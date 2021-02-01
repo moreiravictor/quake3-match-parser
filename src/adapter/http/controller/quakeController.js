@@ -4,7 +4,7 @@ import { NotFound } from '../../../core/util/error.js'
 
 
 export default {
-    async getAll(req, res) {
+    async getAll(req, res, next) {
         try {
             const parsed_matches = parser.parseFile(filepath)
             return res.json(parsed_matches)

@@ -1,10 +1,10 @@
-import GameList from '../../../../src/core/model/gameList.js'
+import GameMap from '../../../../src/core/model/gameMap.js'
 import {registerMatch, registerPlayer, registerKill} from '../../../../src/core/service/gameService.js'
 import {new_player, kill} from '../../../../src/core/util/regex.js'
 
 const new_player_line = ' 20:34 ClientUserinfoChanged: 2 n\\Isgalamido\\t\\0...'
 const player_pattern = new_player_line.match(new_player)
-let games = new GameList()
+let games = new GameMap()
 let game_index = 1
 
 
@@ -14,7 +14,7 @@ describe('GameService', () => {
         registerPlayer(games, game_index, player_pattern)
     })
     afterEach(() => {
-        games = new GameList()
+        games = new GameMap()
         game_index = 1
     })
 

@@ -1,7 +1,7 @@
 import Game from "./game.js"
 import { WORLD } from "../config/config.js"
 
-class GameList {
+class GameMap {
     
     constructor() {}
 
@@ -27,4 +27,4 @@ class GameList {
 
 }
 
-export default GameList
+export default GameMap

@@ -5,17 +5,16 @@ import GameMap from '../model/gameMap.js'
 import Game from '../model/game.js'
 
 function parseFile (filepath) {
-    let games = new GameMap(), game_index = 0, pattern
+    let games = new GameMap(), pattern
     const lines = getFileLines(filepath)   
 
     lines.forEach(line => {
         if (line.match(game_start)) {
-            game_index++;
-            registerMatch(games, game_index)
+            registerMatch(games)
         } else if (pattern = line.match(new_player)) {
-            registerPlayer(games, game_index, pattern)
+            registerPlayer(games, pattern)
         } else if (pattern = line.match(kill)) {
-            registerKill(games, game_index, pattern)
+            registerKill(games, pattern)
         } 
     })
     return games

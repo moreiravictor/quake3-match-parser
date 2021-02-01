@@ -1,19 +1,19 @@
 import killEvent from '../model/killEvent.js'
 import playerEvent from '../model/playerEvent.js'
 
-function registerKill(games, game_index, pattern) {
+function registerKill(games, pattern) {
     const killer = killEvent.killer(pattern)
     const killed = killEvent.killed(pattern)
-    games.addGameKill(game_index, killer, killed)
+    games.addGameKill(killer, killed)
 }
 
-function registerPlayer(games, game_index, pattern) {
+function registerPlayer(games, pattern) {
     const player = playerEvent.player(pattern)
-    games.addGamePlayer(game_index, player)
+    games.addGamePlayer(player)
 }
 
-function registerMatch(games, game_index) {
-    games.addGame(game_index)
+function registerMatch(games) {
+    games.addGame()
 }
 
 export {

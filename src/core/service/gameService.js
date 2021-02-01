@@ -12,12 +12,12 @@ function registerPlayer(games, pattern) {
     games.addGamePlayer(player)
 }
 
-function registerMatch(games) {
+function registerGame(games) {
     games.addGame()
 }
 
 export {
     registerKill,
     registerPlayer,
-    registerMatch
+    registerGame
 }

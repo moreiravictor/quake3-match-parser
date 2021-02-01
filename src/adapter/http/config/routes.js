@@ -2,7 +2,7 @@ import express from 'express'
 import quakeController from '../controller/quakeController.js'
 const routes = express.Router();
 
-routes.get('/matches', quakeController.getAll)
-routes.get('/matches/:match_id', quakeController.getById)
+routes.get('/games', quakeController.getAll)
+routes.get('/games/:game_id', quakeController.getById)
 
 export default routes

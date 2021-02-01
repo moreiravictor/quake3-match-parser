@@ -1,5 +1,5 @@
 import GameMap from '../../../../src/core/model/gameMap.js'
-import {registerMatch, registerPlayer, registerKill} from '../../../../src/core/service/gameService.js'
+import {registerGame, registerPlayer, registerKill} from '../../../../src/core/service/gameService.js'
 import {new_player, kill} from '../../../../src/core/util/regex.js'
 
 const new_player_line = ' 20:34 ClientUserinfoChanged: 2 n\\Isgalamido\\t\\0...'
@@ -8,14 +8,14 @@ let games = new GameMap()
 
 describe('GameService', () => {
     beforeEach(() => {
-        registerMatch(games, )
+        registerGame(games, )
         registerPlayer(games, player_pattern)
     })
     afterEach(() => {
         games = new GameMap()
     })
 
-    it('should register a new match', () => {
+    it('should register a new game', () => {
         expect(games.game_1.total_kills).toBe(0)
     }),
     it('should register a new player', () => {

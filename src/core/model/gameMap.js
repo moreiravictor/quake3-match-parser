@@ -29,6 +29,10 @@ class GameMap {
         this[Game.name(this.game_index)].addKill()
     }
 
+    getGame(game_index) {
+        return this[Game.name(game_index)]
+    }
+
 }
 
 export default GameMap

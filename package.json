@@ -1,5 +1,5 @@
 {
-  "name": "quake3-match-parser",
+  "name": "quake3-log-parser",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

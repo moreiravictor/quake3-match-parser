@@ -5,14 +5,14 @@ describe('Controller which provides parsed informations of log archive', () => {
     it('should parse the whole file', async () => {
 
         const res = await request(app)
-            .get('/matches')
+            .get('/games')
 
         expect(res.status).toBe(200)
     }),
     it('should return a single parsed game', async () => {
 
         const res = await request(app)
-            .get('/matches/1')
+            .get('/games/1')
             
         expect(res.status).toBe(200)
     })

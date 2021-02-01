@@ -1,6 +1,6 @@
-# :video_game: quake3-match-parser
+# :video_game: quake3-log-parser
 
-quake3-match-parser is a parser made for Quake3 log file in order to get games informations (kills, total kills and players).
+quake3-log-parser is a parser made for Quake3 log file in order to get games informations (kills, total kills and players).
 It is made based on REGEX and line by line reading.
 
 ## Setup:
@@ -23,7 +23,7 @@ It will run at port 4043 but you can change it at src/server.js
  
  ## Routes
  
- ### 1. GET all games infos (/matches)
+ ### 1. GET all games infos (/games)
 
 This endpoint will retrieve all games informations contained in the log file
   
@@ -55,7 +55,7 @@ This endpoint will retrieve all games informations contained in the log file
 }
  ```
  
-  ### 2. GET specific game info (/matches/:match_id)
+  ### 2. GET specific game info (/games/:game_id)
  
   Example Response:
  ```bash
